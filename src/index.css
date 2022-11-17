@@ -5,3 +5,8 @@ body {
 button {
   margin-right: 10px;
 }
+
+form {
+  width: 300px;
+  margin: 0 auto;
+}
