@@ -4,11 +4,12 @@ import ReactDOM from 'react-dom/client';
 // import { HooksApp } from './HooksApp';
 // import { CounterWithCustomHook } from './01-useState/CounterCustomHook';
 import { SimpleForm } from './02-useEffect/SimpleForm';
+import { FormCustomHooks } from './02-useEffect/FormWithCustomHook'
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-    <SimpleForm></SimpleForm>
+    <FormCustomHooks></FormCustomHooks>
   // </React.StrictMode>
 )
