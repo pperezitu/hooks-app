@@ -1,3 +1,5 @@
+import {useState} from 'react';
+
 export const useForm = ( initialForm = {} ) => {
     const [formState, setFormState] = useState( initialForm )
 
@@ -9,8 +11,20 @@ export const useForm = ( initialForm = {} ) => {
         })
     }
 
+    const onResetForm = () => {
+//        console.log('se ejecuta para limpiar el form');
+//        useForm({
+//            username: '',
+//            email: '',
+//            password: ''
+//        })
+        setFormState( initialForm )
+    }
+
     return {
+        ...formState,
         formState,
+        onResetForm,
         onInputChange
     }
 }

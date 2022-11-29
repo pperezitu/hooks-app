@@ -1,24 +1,15 @@
-import { Fragment, useEffect, useState } from "react"
+import { Fragment } from "react"
+import {useForm} from "../hooks/useForm";
 
 export const FormCustomHooks = () => {
 
-    //const [formState, setFormState] = useState({
-    //    username: '',
-    //    email: '',
-    //    password: ''
-    //})
+    const {formState, onInputChange, onResetForm, username, email, password} = useForm({
+        username: '',
+        email: '',
+        password: ''
+    })
 
-    useEffect( () => {
-        // console.log('useEffect called!')
-    }, []);
-
-    useEffect( () => {
-        // console.log('formState change!')
-    }, [formState]);
-
-    useEffect( () => {
-        // console.log('email change!')
-    }, [email]);
+//    const {username, email, password} = formState;
 
     return(
         <Fragment>
@@ -43,7 +34,7 @@ export const FormCustomHooks = () => {
                 />
 
                 <input 
-                    type="text"
+                    type="password"
                     className="form-control mt-3"
                     name="password"
                     placeholder="Contraseña"
@@ -51,6 +42,8 @@ export const FormCustomHooks = () => {
                     onChange={onInputChange}>
                 </input>
                 
+                <button onClick={onResetForm} className="btn btn-outline-primary mt-3" type="button">Borrar</button>
+
             </form>
             
         </Fragment>
